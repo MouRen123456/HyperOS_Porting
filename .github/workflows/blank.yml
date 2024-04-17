@@ -12,7 +12,16 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
+    inputs:
+      BASEROM_URL:
+        description: Base ROM URL
+        required: true
+        default: 
+      PORTROM_URL:
+        description: Port ROM URL
+        required: true
+        default: 
+        
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -24,14 +33,25 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Clone scripts
-        run: echo placeholder
+        run: git clone https://github.com/toraidl/hyperos_port.git ./workspace
 
       # Runs a single command using the runners shell
       - name: Start porting
-        run: echo porting
+        run: |
+          cd workspace
+          sudo ./setup.sh
+          sudo ./port.sh ${{ inputs.BASEROM_URL }} ${{ inputs.PORTROM_URL }}
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        uses: softprops/action-gh-release@4634c16e79c963813287e889244c50009e7f0981
+        with:
+          files: |
+            workspace/out/*
+          name: ${{ inputs.DEVICE_NAME }} (TWRP)
+          tag_name: ${{ github.run_id }}
+          body: |
+            Manifest: ${{ inputs.MANIFEST_BRANCH }}
+            Target: ${{ inputs.BUILD_TARGET }}.img
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

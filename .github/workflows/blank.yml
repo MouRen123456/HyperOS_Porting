@@ -16,7 +16,7 @@ on:
       BASEROM_URL:
         description: Base ROM URL
         required: true
-        default: https://drive.usercontent.google.com/download?id=1PqtrsbYzgttl2wpSsjKKpyxtVKLTG1rB&export=download&authuser=0&confirm=t&uuid=035d1036-5c22-48f7-aaf2-6f250dbcad63&at=APZUnTVVkdjxJzvYtotatE-1ZOM-%3A1713373495003
+        default: https://gslz3qq7rwloactnj2f5tqxd73cv8wotet2yq7q6ex988hvamm.helurl.com/uploads/5962a324-650d-4b04-a46b-f7a854b7cc86/5962a324-650d-4b04-a46b-f7a854b7cc86?response-content-type=application%2Foctet-stream&response-content-disposition=attachment%3Bfilename%3DTURBO_V1.0.3.0_R9T_Poco_M3_EnOt.P%2521_A14.zip&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=LTAI5tMYV3MuWpZb6EX5qQQa%2F20240417%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240417T170928Z&X-Amz-SignedHeaders=host&X-Amz-Expires=1800&X-Amz-Signature=5b9947dfc926bb2d80d566ebd06e77054794821fe76561b97be5c2d9c049b3ef
       PORTROM_URL:
         description: Port ROM URL
         required: true

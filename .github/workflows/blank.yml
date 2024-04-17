@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Builder CI
 
 # Controls when the workflow will run
 on:
@@ -16,11 +16,11 @@ on:
       BASEROM_URL:
         description: Base ROM URL
         required: true
-        default: 
+        default: https://drive.usercontent.google.com/download?id=1PqtrsbYzgttl2wpSsjKKpyxtVKLTG1rB&export=download&authuser=0&confirm=t&uuid=035d1036-5c22-48f7-aaf2-6f250dbcad63&at=APZUnTVVkdjxJzvYtotatE-1ZOM-%3A1713373495003
       PORTROM_URL:
         description: Port ROM URL
         required: true
-        default: 
+        default: https://bigota.d.miui.com/OS1.0.7.0.UMGEUXM/miui_TOPAZEEAGlobal_OS1.0.7.0.UMGEUXM_5b32c81f19_14.0.zip
         
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
